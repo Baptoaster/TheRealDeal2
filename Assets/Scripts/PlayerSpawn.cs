@@ -13,6 +13,11 @@ public class PlayerSpawn : MonoBehaviour
         levelStarted.Fire += WarpPlayer;
     }
 
+    private void OnDisable()
+    {
+        levelStarted.Fire -= WarpPlayer;
+    }
+
     void WarpPlayer()
     {
         playerTransform.position = transform.position;
