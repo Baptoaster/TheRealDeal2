@@ -152,3 +152,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 7552402620205645043}
+  movementSpeed: 0.5
+  playerPosition: {fileID: 11400000, guid: d0f83bb92f7ff40489b1d32e599c769f, type: 2}
