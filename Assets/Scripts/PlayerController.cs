@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] float movementSpeed = 0.5f;
 
+    [Header("Output Data")]
+    public RSO_TargetPosition playerPosition;
 
     Vector3 movementDirection;
     
@@ -31,5 +33,7 @@ public class PlayerController : MonoBehaviour
             Quaternion newRotation = Quaternion.LookRotation(newOrientation, Vector3.up);
             playerRigidbody.Move(newPosition, newRotation);
         }
+
+        playerPosition.Value = transform.position;
     }
 }
