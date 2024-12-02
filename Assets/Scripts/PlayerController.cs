@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
         if (playerRigidbody == null) Debug.LogError("There is no rigidbody attached to the script.");
     }
 
-    // Update is called once per frame
     void Update()
     {
         movementDirection = new (Input.GetAxis("Horizontal"), 0,Input.GetAxis("Vertical"));
