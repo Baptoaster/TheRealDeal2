@@ -23,14 +23,6 @@ public class TrapsManager : MonoBehaviour
     float groundHeight;
     float groundDepth;
 
-    private void Start()
-    {
-        groundCenter = groundMesh.bounds.center;
-        groundWidth = groundMesh.bounds.extents.x;
-        groundHeight = groundMesh.bounds.extents.y;
-        groundDepth = groundMesh.bounds.extents.z;
-    }
-
     private void OnEnable()
     {
         if (trapPrefab == null) Debug.LogError("No prefab set for traps.");
@@ -39,6 +31,7 @@ public class TrapsManager : MonoBehaviour
         levelStarted.Fire += SpawnTraps;
         playerDied.Fire += RemoveTraps;
         win.Fire += RemoveTraps;
+        win.Fire += SpawnTraps;
     }
 
     private void OnDisable()
@@ -46,10 +39,16 @@ public class TrapsManager : MonoBehaviour
         levelStarted.Fire -= SpawnTraps;
         playerDied.Fire -= RemoveTraps;
         win.Fire -= RemoveTraps;
+        win.Fire -= SpawnTraps;
     }
 
     void SpawnTraps()
     {
+        groundCenter = groundMesh.bounds.center;
+        groundWidth = groundMesh.bounds.extents.x;
+        groundHeight = groundMesh.bounds.extents.y;
+        groundDepth = groundMesh.bounds.extents.z;
+
         for (int i = 0;  i < trapCount; i++)
         {
             Vector3 newTrapPosition = FindSpawnPosition();

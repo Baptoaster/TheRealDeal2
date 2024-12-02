@@ -2,36 +2,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] RSE_Win win;
-    [SerializeField] RSE_PlayerDied playerDied;
+    [Header("Output Events")]
     [SerializeField] RSE_LevelStarted levelStarted;
 
-    private void OnEnable()
+    private void Start()
     {
-        win.Fire += OnWin;
-        playerDied.Fire += OnPlayerDeath;
-        levelStarted.Fire += OnLevelStart;
-    }
-
-    private void OnDisable()
-    {
-        win.Fire += OnWin;
-        playerDied.Fire += OnPlayerDeath;
-        levelStarted.Fire += OnLevelStart;
-    }
-
-    void OnWin()
-    {
-
-    }
-
-    void OnPlayerDeath()
-    {
-
-    }
-
-    void OnLevelStart()
-    {
-
+        levelStarted.Fire?.Invoke();
     }
 }

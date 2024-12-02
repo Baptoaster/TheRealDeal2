@@ -7,15 +7,18 @@ public class PlayerSpawn : MonoBehaviour
 
     [Header("Input Events")]
     public RSE_LevelStarted levelStarted;
+    public RSE_Win win;
 
     private void OnEnable()
     {
         levelStarted.Fire += WarpPlayer;
+        win.Fire += WarpPlayer;
     }
 
     private void OnDisable()
     {
         levelStarted.Fire -= WarpPlayer;
+        win.Fire -= WarpPlayer;
     }
 
     void WarpPlayer()
