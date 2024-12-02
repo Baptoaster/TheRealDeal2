@@ -27,18 +27,18 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         movementDirection = new (Input.GetAxis("Horizontal"), 0,Input.GetAxis("Vertical"));
-    }
 
-    private void FixedUpdate()
-    {
         if (movementDirection != Vector3.zero)
         {
             Quaternion newRotation = Quaternion.LookRotation(movementDirection.normalized, Vector3.up);
             playerRigidbody.MoveRotation(newRotation);
         }
 
-        playerRigidbody.AddForce(movementDirection.normalized * movementSpeed);
-
         playerPosition.Value = transform.position;
+    }
+
+    private void FixedUpdate()
+    {
+        playerRigidbody.AddForce(movementDirection.normalized * movementSpeed);
     }
 }

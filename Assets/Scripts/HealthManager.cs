@@ -22,7 +22,7 @@ public class HealthManager : MonoBehaviour
 
         if (playerHealth.Value <= 0)
         {
-            playerDied.Fire();
+            playerDied.Fire?.Invoke();
         }
     }
 }
