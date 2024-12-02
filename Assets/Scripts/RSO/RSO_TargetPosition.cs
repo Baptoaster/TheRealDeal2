@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ using UnityEngine;
 public class RSO_TargetPosition : ScriptableObject
 {
     public Action<Vector3> onValueChanged;
+
+    [ShowInInspector]
     private Vector3 _value;
 
     public Vector3 Value
