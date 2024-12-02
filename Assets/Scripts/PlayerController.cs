@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] float movementSpeed = 0.5f;
+    [SerializeField] float maxMovementSpeed = 2f;
 
     [Header("Output Data")]
     public RSO_TargetPosition playerPosition;
@@ -18,6 +19,11 @@ public class PlayerController : MonoBehaviour
         if (playerRigidbody == null) Debug.LogError("There is no rigidbody attached to the script.");
     }
 
+    private void Start()
+    {
+        playerRigidbody.maxLinearVelocity = maxMovementSpeed;
+    }
+
     void Update()
     {
         movementDirection = new (Input.GetAxis("Horizontal"), 0,Input.GetAxis("Vertical"));
@@ -27,11 +33,11 @@ public class PlayerController : MonoBehaviour
     {
         if (movementDirection != Vector3.zero)
         {
-            Vector3 newPosition = transform.position + movementDirection * movementSpeed;
-            Vector3 newOrientation = movementDirection.normalized;
-            Quaternion newRotation = Quaternion.LookRotation(newOrientation, Vector3.up);
-            playerRigidbody.Move(newPosition, newRotation);
+            Quaternion newRotation = Quaternion.LookRotation(movementDirection.normalized, Vector3.up);
+            playerRigidbody.MoveRotation(newRotation);
         }
+
+        playerRigidbody.AddForce(movementDirection.normalized * movementSpeed);
 
         playerPosition.Value = transform.position;
     }

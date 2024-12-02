@@ -122,7 +122,7 @@ Rigidbody:
   m_GameObject: {fileID: 945692100237762452}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 5
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -137,9 +137,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Interpolate: 2
+  m_Constraints: 112
+  m_CollisionDetection: 2
 --- !u!114 &3458261673455256870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 7552402620205645043}
-  movementSpeed: 0.5
+  movementSpeed: 1000
+  maxMovementSpeed: 5
   playerPosition: {fileID: 11400000, guid: d0f83bb92f7ff40489b1d32e599c769f, type: 2}
 --- !u!114 &2686394251365888494
 MonoBehaviour:
