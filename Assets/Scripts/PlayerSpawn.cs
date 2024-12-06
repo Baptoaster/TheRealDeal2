@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerSpawn : MonoBehaviour
 {
     [Header("Reference")]
-    public Transform playerTransform;
+    public PlayerController playerController;
 
     [Header("Input Events")]
     public RSE_LevelStarted levelStarted;
@@ -21,9 +21,14 @@ public class PlayerSpawn : MonoBehaviour
         win.Fire -= WarpPlayer;
     }
 
+    private void Start()
+    {
+        WarpPlayer();
+    }
+
     void WarpPlayer()
     {
-        playerTransform.position = transform.position;
+        playerController.Teleport(transform);
     }
 
     private void OnDrawGizmos()

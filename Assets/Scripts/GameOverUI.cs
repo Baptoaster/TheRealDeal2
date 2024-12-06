@@ -25,11 +25,11 @@ public class GameOverUI : MonoBehaviour
 
     void Show()
     {
-        canvas.enabled = true;
+        canvas.gameObject.SetActive(true);
     }
 
     void Hide()
     {
-        canvas.enabled = false;
+        canvas.gameObject.SetActive(false);
     }
 }

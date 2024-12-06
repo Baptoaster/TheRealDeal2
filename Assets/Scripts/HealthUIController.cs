@@ -14,6 +14,11 @@ public class HealthUIController : MonoBehaviour
         playerHealth.onValueChanged += UpdateHealthSlider;
     }
 
+    private void OnDisable()
+    {
+        playerHealth.onValueChanged -= UpdateHealthSlider;
+    }
+
     void UpdateHealthSlider(int value)
     {
         healthSlider.value = value;
