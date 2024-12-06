@@ -138,7 +138,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 2
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 2
 --- !u!114 &3458261673455256870
 MonoBehaviour:
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ee92fbb482ad540b63f788d577b0d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDied: {fileID: 11400000, guid: ae1f9e78c4ec27248b9855b8fb4ec7e8, type: 2}
   playerRigidbody: {fileID: 7552402620205645043}
   movementSpeed: 1000
   maxMovementSpeed: 5
