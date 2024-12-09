@@ -3,7 +3,7 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] int maxLife;
+    public RSO_PlayerMaxHealth maxHealth;
 
     [Header("Output Data")]
     public RSO_PlayerHealth playerHealth;
@@ -13,7 +13,7 @@ public class HealthManager : MonoBehaviour
 
     private void Start()
     {
-        playerHealth.Value = maxLife;
+        playerHealth.Value = maxHealth.Value;
     }
 
     public void TakeDamage(int damage)
@@ -23,7 +23,7 @@ public class HealthManager : MonoBehaviour
         if (playerHealth.Value <= 0)
         {
             playerDied.Fire?.Invoke();
-            playerHealth.Value = maxLife;
+            playerHealth.Value = maxHealth.Value;
         }
     }
 }
