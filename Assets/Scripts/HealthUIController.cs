@@ -4,22 +4,22 @@ using UnityEngine.UI;
 public class HealthUIController : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] Slider healthSlider;
+    [SerializeField] List<GameObject> healthSlider = new List<GameObject>();
 
     [Header("Input Data")]
     public RSO_PlayerHealth playerHealth;
 
     private void OnEnable()
     {
-        playerHealth.onValueChanged += UpdateHealthSlider;
+        playerHealth.onValueChanged += UpdateHealth;
     }
 
     private void OnDisable()
     {
-        playerHealth.onValueChanged -= UpdateHealthSlider;
+        playerHealth.onValueChanged -= UpdateHealth;
     }
 
-    void UpdateHealthSlider(int value)
+    void UpdateHealth(int value)
     {
         healthSlider.value = value;
     }
