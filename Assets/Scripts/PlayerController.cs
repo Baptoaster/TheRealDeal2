@@ -16,13 +16,13 @@ public class PlayerController : MonoBehaviour
     public RSO_TargetPosition playerPosition;
 
     Vector3 movementDirection;
-    bool isFrozen = false;
+    // bool isFrozen = false;
 
     void OnEnable()
     {
         if (playerRigidbody == null) Debug.LogError("There is no rigidbody attached to the script.");
 
-        playerDied.Fire += Freeze;
+        // playerDied.Fire += Freeze;
     }
 
     private void Start()
@@ -32,11 +32,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (isFrozen)
-        {
-            movementDirection = Vector3.zero;
-            return;
-        }
+        // if (isFrozen)
+        // {
+            // movementDirection = Vector3.zero;
+            // return;
+        // }
 
         movementDirection = new (Input.GetAxis("Horizontal"), 0,Input.GetAxis("Vertical"));
 
@@ -60,8 +60,8 @@ public class PlayerController : MonoBehaviour
         playerRigidbody.position = transform.position;
     }
 
-    public void Freeze()
-    {
-        isFrozen = true;
-    }
+    // public void Freeze()
+    // {
+        // isFrozen = true;
+    // }
 }

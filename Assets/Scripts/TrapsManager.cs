@@ -30,6 +30,7 @@ public class TrapsManager : MonoBehaviour
 
         levelStarted.Fire += SpawnTraps;
         playerDied.Fire += RemoveTraps;
+        playerDied.Fire += SpawnTraps;
         win.Fire += RemoveTraps;
         win.Fire += SpawnTraps;
     }
@@ -38,6 +39,7 @@ public class TrapsManager : MonoBehaviour
     {
         levelStarted.Fire -= SpawnTraps;
         playerDied.Fire -= RemoveTraps;
+        playerDied.Fire -= SpawnTraps;
         win.Fire -= RemoveTraps;
         win.Fire -= SpawnTraps;
     }
