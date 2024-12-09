@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c28afdc728e68547a659fe73de84953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  playerController: {fileID: 0}
   levelStarted: {fileID: 11400000, guid: 410f59fa4d28c084cbd5c467c1bbe16b, type: 2}
   win: {fileID: 11400000, guid: 1b98adc503b87204aa6ae79ddf13ecbf, type: 2}
+  playerDied: {fileID: 11400000, guid: ae1f9e78c4ec27248b9855b8fb4ec7e8, type: 2}
