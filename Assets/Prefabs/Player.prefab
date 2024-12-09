@@ -169,6 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79cfadd037c461a419c8bc81d254feda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 3
+  maxHealth: {fileID: 11400000, guid: 1a2b5c234d17d814fbf7dbb2fdbb3d17, type: 2}
   playerHealth: {fileID: 11400000, guid: f9d3dc5237dcdaa4cbf973b45555fd8f, type: 2}
   playerDied: {fileID: 11400000, guid: ae1f9e78c4ec27248b9855b8fb4ec7e8, type: 2}

@@ -1,13 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthUIController : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] List<GameObject> healthSlider = new List<GameObject>();
+    [SerializeField] List<Image> heartDisplays = new List<Image>();
 
+    [SerializeField] Sprite emptyHeart;
+
+    [SerializeField] Sprite fullHeart;
+    
     [Header("Input Data")]
     public RSO_PlayerHealth playerHealth;
+    public RSO_PlayerMaxHealth maxHealth;
 
     private void OnEnable()
     {
@@ -21,6 +28,16 @@ public class HealthUIController : MonoBehaviour
 
     void UpdateHealth(int value)
     {
-        healthSlider.value = value;
+        for(int i = 0; i < maxHealth.Value; i++)
+        {
+            if(i < playerHealth.Value)
+            {
+                heartDisplays[i].sprite = fullHeart;
+            }
+            else
+            {
+                heartDisplays[i].sprite = emptyHeart;
+            }
+        }
     }
 }
